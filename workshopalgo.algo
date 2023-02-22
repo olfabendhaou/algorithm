@@ -1,0 +1,31 @@
+ALGORITHM workshop
+VA
+   phrase :STRING;
+   longueur: INTEGER:=0;
+   words:INTEGER:=1;
+   voyelle: INTEGER:=0 
+   L: CHAR:=["a","e","i","o","u","y"]
+BEGIN
+  
+   Read(phrase) 
+
+   FOR i in phrase DO
+      IF (i!=" " ; i!=".") THEN
+         longueur+=1
+      END_IF;
+   END_FOR
+   
+   FOR i in phrase DO
+      IF (i:=" ")  THEN
+         word++ ;
+      END_IF ;
+   END_FOR
+      
+   FOR i in phrase DO
+       IF (i in L) THEN
+       voyelle ++ ;
+       END_IF;
+   END_FOR
+   
+    write(longueur, words, voyelle)
+END
