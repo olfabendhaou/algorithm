@@ -1,0 +1,23 @@
+FUNCTION insertion_sort(VAR arr: ARRAY_OF INTEGER):
+    VAR
+    i,j,current_value:INTEGER
+    BEGIN   
+        FOR (i FROM 1 TO length(arr))DO 
+        current_value = arr[i]
+        j = i - 1
+        WHILE j >= 0 and arr[j] > current_value DO
+            arr[j + 1] = arr[j]
+            j -= 1
+        END_WHILE
+        arr[j + 1] = current_value
+    END_FOR
+    return arr;
+    END
+ALGORITHM TRIALGORITHM
+    VAR
+        tab: array_name : ARRAY_OF INTEGER[10];
+    BEGIN
+    whrite(insertion_sort(tab));
+    END
+
+

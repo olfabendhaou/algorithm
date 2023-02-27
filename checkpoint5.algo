@@ -1,0 +1,64 @@
+                         // PROBLEME 1
+ALGORITHM DISTINCT_ELEMENT
+VAR
+SET_1: ARRAY_OF INTEGER[4]:=[3 1 7 9];
+SET_2: ARRAY_OF INTEGER[5]:=[2 4 1 9 3];
+i;j: INTEGER
+SUM: INTEGER:=0
+BEGIN
+    FOR (i from 0 to 3) DO 
+        FOR(j from 0 to 4)DO
+            IF SET_1[i] = SET_2[j] THEN
+                EXIT; // the elements are not distinct, skip to the next j
+            END_IF
+        END_FOR
+        SUM := SUM + SET_1[i]; // add the distinct element from SET_1 to the sum
+    END_FOR
+    FOR j FROM 0 TO 4 DO
+        FOR i FROM 0 TO 3 DO
+            IF SET_2[j] = SET_1[i] THEN
+                EXIT; // the elements are not distinct, skip to the next i
+            END_IF
+        END_FOR
+        SUM := SUM + SET_2[j]; // add the distinct element from SET_2 to the sum
+    END_FOR
+    WRITE(SUM); // output the sum of the distinct elements
+END
+
+                           //PROBLRME 2
+PROCEDURE dot_prduct(V1,V2 :ARRAY_OF_FLOAT)
+VAR
+    PS:FLOAT:=0
+    i:INTEGER
+BEGIN
+    FOR(i from 0 to min(length(V1),length(V2))-1) Do
+    PS:=PS+V1[i]*V2[i];
+    END_FOR
+ALGORITHM CHECK_ORTHOGONALIY
+VAR
+n:INTEGER
+V:ARRAY_OF_FLOAT[n][2]
+ORTHO_VECTOR: ARRAY_OF_BOOLEAN[n]
+ps:FLOAT
+BEGIN
+    FOR (i from 0 to n-1) DO
+    vi:=V[i]:
+    ps:=dot_prduct(vi[0],vi[1]);
+        IF ps==0 THEN
+            ORTHO_VECTOR[i]:=true;
+        ELSE   
+            ORTHO_VECTOR[i]:=false;
+        END_IF
+    END_FOR
+    write(ORTHO_VECTOR)
+END
+    
+
+
+
+        
+
+
+
+
+
