@@ -1,0 +1,15 @@
+FUNCTION is palandrime(var word:STRING) : BOOLEAN
+VAR
+    i:=0;
+    j:=length(word)-1;
+BEGIN
+    IF  (j<=i) THEN
+        RETURN TRUE ;
+        ELSE_IF (word[i]!=word[j]) THEN
+            RETURN FALSE ;
+        ELSE 
+        i:=i+1;
+        j:=j-1;
+        RETURN is plandrime(word) ;
+    END_IF;
+END;
