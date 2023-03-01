@@ -1,7 +1,7 @@
 FUNCTION is palandrime(var word:STRING) : BOOLEAN
 VAR
-    i:=0;
-    j:=length(word)-1;
+    i:INTEGER:=0;
+    j:INTEGER:=length(word)-1;
 BEGIN
     IF  (j<=i) THEN
         RETURN TRUE ;
